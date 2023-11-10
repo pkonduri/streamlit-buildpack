@@ -1,0 +1,16 @@
+#!/bin/bash
+
+BUILD_DIR=$1
+
+echo "-----> Modifying Streamlit's index.html"
+
+STREAMLIT_STATIC_DIR="$BUILD_DIR/.heroku/python/lib/python3.9/site-packages/streamlit/static"
+
+if [ -d "$STREAMLIT_STATIC_DIR" ]; then
+    # Assuming you have the modified index.html in the buildpack's directory
+    cp $BUILD_DIR/my-custom-buildpack/index.html $STREAMLIT_STATIC_DIR/index.html
+    echo "-----> Custom index.html copied successfully"
+else
+    echo "-----> Streamlit directory not found"
+    exit 1
+fi
