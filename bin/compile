@@ -4,7 +4,7 @@ BUILD_DIR=$1
 
 echo "-----> Modifying Streamlit's index.html"
 
-STREAMLIT_STATIC_DIR="$BUILD_DIR/.heroku/python/lib/python3.9/site-packages/streamlit/static"
+STREAMLIT_STATIC_DIR="$BUILD_DIR/.heroku/python/lib/python3.11/site-packages/streamlit/static"
 
 if [ -d "$STREAMLIT_STATIC_DIR" ]; then
     # Assuming you have the modified index.html in the buildpack's directory
